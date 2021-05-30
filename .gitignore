@@ -1,0 +1,13 @@
+# Text editors and IDEs
+.idea
+
+# OS files
+.DS_Store
+
+# Python and virtual environments
+__pycache__
+env
+
+# App content and third-party resources used in the app
+content
+**/third_party/**
