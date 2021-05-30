@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include 'modules/meta.html' %}
+		{% block styles %}
+			<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/optimized.css')}}" media="screen" />
+			<style>
+				@font-face {
+					font-family: "Raleway";
+					src: local("Raleway-ExtraLight"), url("{{url_for('static', filename='fonts/third_party/Raleway-ExtraLight.ttf')}}");
+					font-display: swap;
+				}
+				@font-face {
+					font-family: "Inconsolata";
+					src: local("Inconsolata-ExtraLight"), url("{{url_for('static', filename='fonts/third_party/Inconsolata-ExtraLight.ttf')}}");
+					font-display: swap;
+				}
+			</style>
+		{% endblock %}
+	</head>
+	<body>
+		{% block header %}
+			{% include 'modules/header.html' %}
+		{% endblock %}
+		<main>
+			{% block content %}
+			{% endblock %}
+		</main>
+		{% include 'modules/footer.html' %}
+	</body>
+</html>
