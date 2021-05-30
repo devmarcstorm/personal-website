@@ -1,0 +1,25 @@
+{% if projects %}
+<section class="section" id="projects">
+	<h2 class="section__headline">Featured Projects</h2>
+	<a class="button" href="#about">About me</a>
+	<div class="desktop-card-grid">
+		{% for project in projects %}
+		<div class="project">
+			<picture class="project__thumbnail">
+				{% for type in project.thumbnail.types[1:] %}
+   				<source srcset="{{ url_for('media', filename=project.thumbnail.name + '.' + type) }}" type="image/{{ type }}">
+   				{% endfor %}
+   				<img loading="lazy" src="{{ url_for('media', filename=project.thumbnail.name + '.' + project.thumbnail.types[0]) }}" width="854" height="480" alt="{{ project.thumbnail.alt }}">
+			</picture>
+			<h3 class="project__title">{{ project.title }} ({{ project.date }})</h3>
+			<p class="project__description">{{ project.description }}</p>
+			<ul class="project__list">
+				{% for link in project.links %}
+				<li class="project__list-item"><a class="project__link" href="{{ link.url }}">{{ link.label }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+{% endif %}

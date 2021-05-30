@@ -1,0 +1,10 @@
+{% extends "./base.html" %}
+{% block title %}{{ content.pages.portfolio.title }} - {{ content.pages.portfolio.tagline }}{% endblock %}
+{% block content %}
+{% with id='privacy', title='Privacy', text=privacy_text, links=content.pages.info.links %}
+{% include 'modules/section.html' %}
+{% endwith %}
+{% with id='accessibility', title='Accessibility', text=accessibility_text, links=content.pages.info.links %}
+{% include 'modules/section.html' %}
+{% endwith %}
+{% endblock %}

@@ -1,0 +1,14 @@
+<section class="section" id="about">
+	<h2 class="section__headline">About Me</h2>
+	{% if about_text %}
+	<p class="section__text">{{ about_text }}</p>
+	{% endif %}
+	{% with text = 'Welcome' %}
+	{% include 'modules/mascot.html' %}
+	{% endwith %}
+	<nav aria-label="My profiles on other websites">
+		{% for link in content.quick_links %}
+		<a class="button" href="{{ link.url }}">{{ link.label }}</a>
+		{% endfor %}
+	</nav>
+</section>

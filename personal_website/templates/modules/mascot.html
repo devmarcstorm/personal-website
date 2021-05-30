@@ -1,0 +1,4 @@
+{% if mascot %}
+<br>
+<pre class="mascot" aria-label="My cute rabbit mascot saying '{{ text }}'">{{ mascot | replace("??", text) }}</pre>
+{% endif %}

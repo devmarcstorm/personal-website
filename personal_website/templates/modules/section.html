@@ -1,0 +1,13 @@
+<section class="section" {% if id %}id="{{ id }}" {% endif %}>
+	{% if title %}
+	<h2 class="section__headline">{{ title }}</h2>
+	{% endif %}
+	{% if text %}
+	<p class="section__text">{{ text | urlize(50, true) }}</p>
+	{% endif %}
+	<nav aria-label="{{ links_aria }}">
+		{% for link in links %}
+		<a class="button" href="{{ link.url }}">{{ link.label }}</a>
+		{% endfor %}
+	</nav>
+</section>
