@@ -1,0 +1,18 @@
+<footer class="footer">
+	<div class="container">
+		<p class="footer__cp">
+			Made with passion by {{ content.name }} {% if content.nick %}({{ content.nick }}){% endif %}<br><br>
+			&copy; {{ year }} {{ content.name }}
+		</p>
+		<nav aria-label="Footer links to more resources about this website">
+			<ul class="footer__list">
+				<li class="footer__list-item"><a class="footer__link" href="/">Home</a></li>
+				<li class="footer__list-item"><a class="footer__link" href="{{ url_for('portfolio.info') }}#privacy">Privacy</a></li>
+				<li class="footer__list-item"><a class="footer__link" href="{{ url_for('portfolio.info') }}#accessibility">Accessibility</a></li>
+				{% for link in content.footer_links %}
+				<li class="footer__list-item"><a class="footer__link" href="{{ link.url }}">{{ link.label }}</a></li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</footer>

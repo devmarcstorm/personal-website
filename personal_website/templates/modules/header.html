@@ -1,0 +1,8 @@
+<header class="header">
+	<div class="container">
+		<a href="/">
+			<h1 class="header__title">{{ page_info.title }}</h1>
+		</a>
+		<h2 class="header__tagline">{% if not tagline %}{{ page_info.tagline }}{% else %}{{ tagline }}{% endif %}</h2>
+	</div>
+</header>
