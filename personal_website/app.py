@@ -20,11 +20,14 @@ def media(filename):
 
 @app.errorhandler(404)
 def page_not_found(e):
-	content = read_from_file('content/content.json')
-	page_info = content['pages']['404']
-	mascot = read_from_file('content/mascot.txt')
-	year = datetime.date.today().strftime("%Y")
-	return render_template('error.html', page_info=page_info, tagline="Error 404", content=content, mascot=mascot, year=year), 404
+	try:
+		content = read_from_file('content/content.json')
+		page_info = content['pages']['404']
+		mascot = read_from_file('content/mascot.txt')
+		year = datetime.date.today().strftime("%Y")
+		return render_template('error.html', page_info=page_info, tagline="Error 404", content=content, mascot=mascot, year=year), 404
+	except KeyError:
+		return r'<h1>404 Page not found :(</h1><a href="/">Home</a>'
 
 
 @app.context_processor
