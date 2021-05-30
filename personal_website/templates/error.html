@@ -1,0 +1,15 @@
+{% extends "./base.html" %}
+{% block content %}
+<section class="section">
+	<h2 class="section__headline">{{ page_info.tagline }}</h2>
+	<p class="section__text">{{ page_info.description }}</p>
+	{% with text = 'Sorry, something went wrong' %}
+	{% include 'modules/mascot.html' %}
+	{% endwith %}
+	<nav aria-label="Links that take you back to other parts of this website">
+		{% for link in page_info.links %}
+		<a class="button" href="{{ link.url }}">{{ link.label }}</a>
+		{% endfor %}
+	</nav>
+</section>
+{% endblock %}
