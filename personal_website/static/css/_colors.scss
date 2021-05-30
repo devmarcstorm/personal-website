@@ -1,0 +1,33 @@
+/*
+* =============================================================
+* Colors - Tested for accessibility with https://colorshark.io/
+* =============================================================
+*/
+
+$color-1: #15513D;
+$color-2: #000;
+$color-3: #98fb98;
+$color-4: #fff;
+
+/* 
+* fff background:
+* - 15513D: AAA
+* - 000: AAA
+* - 98fb98: Fail
+*
+* 98fb98 background:
+* - 15513D: AAA
+* - 000: AAA
+* - fff: Fail
+*
+* 000 background:
+* - 15513D: Fail
+* - 98fb98: AAA
+* - fff: AAA
+*
+* 15513D background:
+* - 000: Fail
+* - 98fb98: AAA
+* - fff: AAA
+*/
+

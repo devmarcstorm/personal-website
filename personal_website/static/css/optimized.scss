@@ -1,0 +1,292 @@
+@import 'colors';
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Raleway;
+    font-weight: 200
+}
+
+.mascot {
+    font-family: "Inconsolata",monospace;
+    white-space: pre-wrap;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.container,main {
+    padding: 50px;
+    margin: 0 auto
+}
+
+body {
+    background-color: $color-1
+}
+
+main {
+    background-color: $color-4
+}
+
+.button {
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid $color-2;
+    border-radius: 10px;
+    text-align: center;
+    color: $color-2;
+    text-decoration: none;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px
+}
+
+.button:first-of-type {
+    margin-top: 30px
+}
+
+.button.cta {
+    background-color: $color-3;
+    color: $color-4;
+    border-color: $color-4
+}
+
+.button:hover {
+    color: $color-3;
+    border-color: $color-1;
+    background-color: $color-1
+}
+
+.header {
+    background-color: $color-1;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 2px solid $color-3
+}
+
+.header__tagline,.header__title {
+    font-size: 1.3rem;
+    color: $color-3;
+    display: inline
+}
+
+.header__tagline {
+    color: $color-4
+}
+
+.header__tagline:before {
+    content: "- "
+}
+
+.header a {
+    text-decoration: none
+}
+
+.section {
+    padding: 50px 0 0;
+    color: $color-2
+}
+
+.section__headline,.section__text {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.section__headline {
+    font-size: 1.3rem
+}
+
+.section__text {
+    margin-top: 20px;
+    white-space: pre-wrap
+}
+
+.section:first-of-type {
+    margin-top: 0;
+    padding-top: 0
+}
+
+.project {
+    padding-top: 50px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.project:first-of-type {
+    padding-top: 30px
+}
+
+.project__thumbnail img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto
+}
+
+.project__title {
+    padding-top: 10px;
+    font-size: 1.1rem
+}
+
+.project__description {
+    padding-top: 10px;
+    font-size: .9rem
+}
+
+.project__list {
+    padding-top: 10px
+}
+
+.project__list-item {
+    list-style: none;
+    display: inline
+}
+
+.project__link {
+    color: $color-1;
+    text-decoration: none;
+    font-size: .9rem
+}
+
+.project__link:before {
+    content: "[ ";
+    color: $color-1
+}
+
+.project__link:after {
+    content: " ]";
+    color: $color-1
+}
+
+.project__link:hover {
+    color: $color-2
+}
+
+.footer {
+    background-color: $color-1;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border-top: 2px solid $color-3
+}
+
+.footer__cp {
+    font-size: 1rem;
+    color: $color-4
+}
+
+.footer__list {
+    margin-top: 30px
+}
+
+.footer__list-item {
+    list-style: none
+}
+
+.footer__list-item:not(:last-of-type) {
+    margin-bottom: 10px
+}
+
+.footer__link {
+    color: $color-3;
+    text-decoration: none;
+    white-space: nowrap
+}
+
+.footer__link:before {
+    content: "[ ";
+    color: $color-3
+}
+
+.footer__link:after {
+    content: " ]";
+    color: $color-3
+}
+
+.footer__link:hover {
+    color: $color-4
+}
+
+@media only screen and (min-width:800px)and (min-height:550px) {
+    body {
+        display: grid;
+        grid-template-columns: 300px auto;
+        grid-template-rows: 1fr
+    }
+
+    body,html {
+        height: 100%
+    }
+
+    .footer,.header {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        position: fixed;
+        width: 300px
+    }
+
+    .header {
+        border-bottom: none
+    }
+
+    .footer {
+        text-align: left;
+        bottom: 0
+    }
+
+    main {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        overflow: auto
+    }
+}
+
+@media only screen and (min-width:800px) {
+    .button {
+        margin-left: 0;
+        margin-right: 0;
+        display: inline-block
+    }
+
+    .button:not(:last-of-type) {
+        margin-right: 30px
+    }
+
+    .section {
+        padding-right: 100px;
+        padding-left: 100px;
+        padding-top: 70px
+    }
+
+    .section__headline {
+        margin-left: 0;
+        margin-right: 0
+    }
+
+    .section .mascot,.section__text {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 500px
+    }
+
+    .section:last-of-type {
+        margin-bottom: 30px
+    }
+
+    .desktop-card-grid {
+        display: grid;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        grid-template-columns: repeat(auto-fill,400px)
+    }
+
+    .desktop-card-grid :not(:first-of-type) {
+        padding-top: 30px
+    }
+}
