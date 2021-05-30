@@ -11,3 +11,6 @@ env
 # App content and third-party resources used in the app
 content
 **/third_party/**
+
+# css maps
+*.css.map
