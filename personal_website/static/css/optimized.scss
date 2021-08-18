@@ -8,7 +8,7 @@
 }
 
 .mascot {
-    font-family: "Inconsolata",monospace;
+    font-family: "Inconsolata", monospace;
     white-space: pre-wrap;
     max-width: 400px;
     margin-left: auto;
@@ -289,5 +289,40 @@ main {
 
     .desktop-card-grid .project:not(:first-of-type) {
         padding-top: 30px
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    main {
+        background-color: $color-2;
+    }
+
+    .button {
+        color: $color-3;
+        border-color: $color-3;
+    }
+
+    h2, p, pre, h3, ul {
+        color: $color-4;
+
+        a {
+            color: $color-3;
+        }
+    }
+
+    .project__link {
+        &:before {
+            color: $color-3;
+        }
+
+        color: $color-3;
+
+        &:after {
+            color: $color-3;
+        }
+
+        &:hover {
+            color: $color-4;
+        }
     }
 }
