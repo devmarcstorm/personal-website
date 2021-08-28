@@ -4,6 +4,7 @@ import os
 from flask import Flask  # pip install Flask
 from flask import render_template
 from flask import send_from_directory
+from flask import request
 
 from apps.portfolio.views import portfolio
 from apps.utilities.files import read_from_file
@@ -38,3 +39,8 @@ def inject_now():
 		app.context_processor
 	"""
 	return {'year': datetime.date.today().strftime("%Y")}
+
+
+@app.route('/robots.txt')
+def get_static_file_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
